@@ -1,0 +1,19 @@
+h2 {{props.title}}
+form((ngSubmit)="onSubmit()", [ngFormModel]="AppFormModel")
+  div.control-group(*ngFor="#field of props.fields")
+    label(htmlFor="{{field.id}}", [ngClass]="{invalid : !AppFormModel.controls[field.name].valid}") {{field.label}}
+      input(id="{{field.id}}", type="{{field.type}}", name="{{field.name}}", [ngFormControl]="AppFormModel.controls[field.name]", [(ngModel)]="AppFormModel[field.name]", placeholder="{{field.placeholder}}")
+  button(type="submit") Submit
+  #log
+    h2 Output
+    div
+      strong username:
+      pre
+        code {{AppFormModel.username}}
+    div
+      strong password:
+      pre
+        code {{AppFormModel.password}}
+    h3 OnSubmit
+    pre
+      code {{output}}

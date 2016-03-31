@@ -1,0 +1,17 @@
+form {
+  label, input {
+    display: block;
+    margin-bottom:10px;
+  }
+  input, button {
+    padding:4px;
+    border:1px solid black;
+  }
+  .ng-invalid {
+    background-color: pink;
+  }
+  button {
+    background:#eee;
+    cursor:pointer;
+  }
+}

@@ -1,0 +1,4 @@
+// e.g., +controlGroup("userPassword", "Password", "password", "password", "Enter your password", "AppFormModel.password", "AppFormModel.controls.password")
+mixin controlGroup(id, label, name, type, placeholder, model, control)
+  label(for="#{id}", [ngClass]="{invalid : '!' + #{control} + 'valid'}")= label
+    input(id="#{id}", type="#{type}", name="#{name}", [ngFormControl]="#{control}", [(ngModel)]="#{model}", placeholder="#{placeholder}")
